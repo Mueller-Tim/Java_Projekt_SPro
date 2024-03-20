@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"ch.zhaw.spro"},{"l":"ch.zhaw.spro.dbcontrollers"},{"l":"ch.zhaw.spro.dbrepos"},{"l":"ch.zhaw.spro.dbservices"},{"l":"ch.zhaw.spro.models"},{"l":"ch.zhaw.spro.observerinterfaces"},{"l":"ch.zhaw.spro.windowcontrollers"}];updateSearchResults();
