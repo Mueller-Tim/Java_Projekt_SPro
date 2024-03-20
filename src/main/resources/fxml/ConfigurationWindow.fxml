@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<AnchorPane fx:id="configurationAnchorPane" prefHeight="500.0" prefWidth="1000.0" stylesheets="../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.ConfigurationWindowController">
+    <GridPane style="-fx-background-color:#dedede" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="475.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints maxHeight="5.0" minHeight="0.0" prefHeight="0.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="160.0" minHeight="160.0" prefHeight="160.0" vgrow="NEVER" />
+        </rowConstraints>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="25.0" left="50.0" right="50.0" top="20.0" />
+            </padding>
+            <Label alignment="TOP_LEFT" contentDisplay="TEXT_ONLY" prefHeight="35.0" prefWidth="262.0" styleClass="title-2, text-underlined" text="Shift Manager">
+                <VBox.margin>
+                    <Insets bottom="15.0" />
+                </VBox.margin>
+            </Label>
+            <ScrollPane cacheShape="false" centerShape="false" fitToHeight="true" fitToWidth="true" pickOnBounds="false" scaleShape="false">
+                <VBox alignment="CENTER" styleClass="window">
+                    <Label alignment="CENTER" contentDisplay="TEXT_ONLY" styleClass="title-5, text-underlined" text="Available Employee" />
+                    <Separator />
+                    <HBox alignment="CENTER" spacing="10">
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                        <Button id="searchButton" fx:id="buttonFilterEmployee" mnemonicParsing="false" onAction="#buttonFilterEmployeeOnAction" styleClass="button-outlined">
+                            <graphic>
+                                <FontIcon iconLiteral="mdi2f-filter" />
+                            </graphic>
+                            <HBox.margin>
+                                <Insets bottom="5.0" top="5.0" />
+                            </HBox.margin>
+                        </Button>
+                        <TextField fx:id="fieldSearchEmployee">
+                            <HBox.margin>
+                                <Insets bottom="5.0" top="5.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Button id="filterButton" fx:id="buttonSearchEmployee" mnemonicParsing="false" onAction="#buttonSearchEmployeeOnAction" styleClass="button-outlined">
+                            <graphic>
+                                <FontIcon iconLiteral="mdi2a-account-search" />
+                            </graphic>
+                            <opaqueInsets>
+                                <Insets top="10.0" />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets bottom="5.0" top="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </HBox>
+                    <JFXListView fx:id="listAvailableEmployee" cacheShape="false" focusTraversable="false" pickOnBounds="false" prefHeight="769.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+                </VBox>
+              <VBox.margin>
+                  <Insets />
+              </VBox.margin>
+            </ScrollPane>
+        </VBox>
+        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="lblError" alignment="CENTER" text="Label" textFill="RED" visible="false" />
+        </HBox>
+        <AnchorPane prefWidth="700.0" GridPane.columnIndex="2">
+            <GridPane.margin>
+                <Insets bottom="25.0" right="20.0" top="70.0" />
+            </GridPane.margin>
+            <VBox fx:id="vBoxShiftList" alignment="CENTER" styleClass="window" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" contentDisplay="TEXT_ONLY" styleClass="title-5, text-underlined" text="Scheduling Shifts" />
+                <Separator />
+                <HBox alignment="CENTER" spacing="10">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </HBox.margin>
+                </HBox>
+                <ScrollPane fx:id="scrollPaneShiftType" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </AnchorPane>
+        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+            <Button fx:id="buttonSettingId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonSetting" prefHeight="57.0" prefWidth="66.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="Show settings" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/setting_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" />
+                </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonExit" prefHeight="50.0" prefWidth="66.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="End application" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/exit_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </Button>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <Button fx:id="buttonInformationId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonInformation" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="Application information" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/info_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="buttonCalendarId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonCalendar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="Show calendar" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/calendar_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="buttonAddEmployeeId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="Add employee" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/add_employee_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </Button>
+            <Button fx:id="buttonDeleteEmployeeId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonDeleteEmployee" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                <tooltip>
+                    <Tooltip text="Delete employee" />
+                </tooltip>
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <Image url="@../images/delete_employee_icon.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets left="10.0" top="20.0" />
+                </VBox.margin>
+            </Button>
+         <Button fx:id="buttonAddShiftTypeId" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="168.0" mnemonicParsing="false" onAction="#buttonAddShiftType" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+            <tooltip>
+               <Tooltip text="Add shift type" />
+            </tooltip>
+            <graphic>
+               <ImageView fitHeight="50.0" fitWidth="50.0">
+                  <image>
+                     <Image url="@../images/add_shift_type_icon.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <VBox.margin>
+               <Insets left="10.0" top="20.0" />
+            </VBox.margin>
+         </Button>
+        </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <children>
+              <Button contentDisplay="RIGHT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#buttonGenerate" prefHeight="45.0" prefWidth="230.0" styleClass="rounded" text="Generate Plan" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="30.0">
+                  <graphic>
+                      <FontIcon iconLiteral="mdi2n-newspaper-variant-multiple" />
+                  </graphic>
+              </Button>
+         </children>
+      </AnchorPane>
+    </GridPane>
+</AnchorPane>

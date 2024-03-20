@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.InformationWindowController">
+   <children>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="350.0" spacing="5" stylesheets="../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="title-3, text-underlined" text="Information About The Project:" />
+            <ImageView fitHeight="70.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo_transparent_s_pro_small.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="159.0" prefWidth="300.0" styleClass="text" text="This project was developed as part of the PM3 module at the ZHAW School of Engineering. The prototype automatically generates a shift plan with the specified preferences. More detailed information on the project can be found in the technical report.The development team consists of:" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" />
+            <Label styleClass="text" text="Tim Müller" wrapText="true" />
+            <Label styleClass="text" text="Shamess Alshami" wrapText="true" />
+            <Label styleClass="text" text="James Leadbeater" wrapText="true" />
+            <Label styleClass="text" text="Tobias Leu" wrapText="true" />
+            <Label styleClass="text" text="Tommy Lee Kälin" wrapText="true" />
+            <HBox alignment="CENTER" spacing="20">
+               <children>
+                  <StackPane HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="77.0" text="Close">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

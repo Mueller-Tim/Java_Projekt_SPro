@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane prefHeight="236.0" prefWidth="435.0" stylesheets="../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.AddShiftWindowController">
+   <VBox alignment="CENTER_LEFT" prefHeight="236.0" prefWidth="435.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="5.0" top="5.0" />
+      </padding>
+      <Label styleClass="title-3" text="Add Shift">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/calendar_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblDate" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <JFXRadioButton fx:id="fullDayRadioButton" style="-fx-background-color: System;" styleClass="text-caption-new" text="Full Day">
+               <selectedColor>
+                  <Color red="0.45490196347236633" green="0.45490196347236633" blue="0.45490196347236633" />
+               </selectedColor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="shiftTime" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="morningRadioButton" style="-fx-background-color: System;" styleClass="text-caption-new" text="Morning Shift" toggleGroup="$shiftTime">
+               <selectedColor>
+                  <Color red="0.45490196347236633" green="0.45490196347236633" blue="0.45490196347236633" />
+               </selectedColor>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="LunchRadioButton" style="-fx-background-color: System;" styleClass="text-caption-new" text="Lunch Shift" toggleGroup="$shiftTime">
+               <selectedColor>
+                  <Color red="0.45490196347236633" green="0.45490196347236633" blue="0.45490196347236633" />
+               </selectedColor>
+            </JFXRadioButton>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="35.0">
+         <children>
+            <Label styleClass="text-caption-new" text="Shift Type:">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="shiftTypeComboBox" prefWidth="150.0" styleClass="text-caption-new">
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" spacing="20.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Save">
+               <HBox.margin>
+                  <Insets right="130.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="lblError" alignment="CENTER" text="err" visible="false" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="btnClose" mnemonicParsing="false" onAction="#btnClose" prefHeight="25.0" prefWidth="77.0" text="Close" />
+         </children>
+         <VBox.margin>
+            <Insets right="4.0" />
+         </VBox.margin>
+      </HBox>
+   </VBox>
+</AnchorPane>

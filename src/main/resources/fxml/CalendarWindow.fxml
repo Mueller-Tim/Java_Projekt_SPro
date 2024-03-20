@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.CalendarWindowController">
+   <children>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="350.0" spacing="20" stylesheets="../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="title-3, text-underlined" text="Calendar Under Development:" />
+            <Label prefHeight="50.0" prefWidth="300.0" styleClass="text" text="This function is still in progress. We are trying to implement it as soon as possible." textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" />
+            <Label prefHeight="102.0" prefWidth="300.0" styleClass="text" text="This function is intended to provide direct access to the individual calendars of the employees recorded, for example by integrating Microsoft Outlook." textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <HBox alignment="CENTER" spacing="20">
+               <children>
+                  <StackPane HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeAction" prefHeight="25.0" prefWidth="77.0" text="Close">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" stylesheets="..\css\style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.ShiftTableWindowController">
+   <GridPane layoutX="10.0" layoutY="10.0" style="-fx-background-color:#dedede" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="90.0" />
+         <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+         <ColumnConstraints hgrow="ALWAYS" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints vgrow="NEVER" />
+         <RowConstraints maxHeight="5.0" minHeight="0.0" prefHeight="0.0" vgrow="NEVER" />
+         <RowConstraints maxHeight="156.0" minHeight="141.0" prefHeight="151.0" vgrow="NEVER" />
+      </rowConstraints>
+      <children>
+         <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+               <Label fx:id="lblError" alignment="CENTER" text="Label" textFill="RED" visible="false" />
+            </children>
+         </HBox>
+         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+            <children>
+               <Button fx:id="buttonSettingId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonSetting" prefHeight="57.0" prefWidth="66.0" style="-fx-background-color: #525050">
+                  <tooltip>
+                     <Tooltip text="Show settings" />
+                  </tooltip>
+                  <graphic>
+                     <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <image>
+                           <Image url="@../images/setting_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonExit" prefHeight="50.0" prefWidth="66.0" style="-fx-background-color: #525050">
+                  <tooltip>
+                     <Tooltip text="End application" />
+                  </tooltip>
+                  <graphic>
+                     <ImageView fitHeight="50.0" fitWidth="50.0">
+                        <image>
+                           <Image url="@../images/exit_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </VBox.margin>
+               </Button>
+            </children>
+         </VBox>
+         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+               <Button fx:id="pageBackId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pageBack" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                  <tooltip>
+                     <Tooltip text="Go page back" />
+                  </tooltip>
+                  <graphic>
+                     <ImageView fx:id="pageBack" fitHeight="50.0" fitWidth="50.0">
+                        <image>
+                           <Image url="@../images/page_back_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="buttonLegend" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                  <graphic>
+                     <ImageView fitHeight="50.0" fitWidth="50.0" onDragDetected="#buttonLegend">
+                        <image>
+                           <Image url="@../images/legend_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="buttonExportPDFId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonExportPDF" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #525050">
+                  <tooltip>
+                     <Tooltip text="Export PDF" />
+                  </tooltip>
+                  <graphic>
+                     <ImageView fx:id="buttonExportPDF" fitHeight="50.0" fitWidth="50.0">
+                        <image>
+                           <Image url="@../images/create_pdf_icon.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="10.0" top="20.0" />
+                  </VBox.margin>
+               </Button>
+            </children>
+         </VBox>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowSpan="3">
+            <children>
+                <ScrollPane fx:id="scrollPaneTable" style="-fx-border-color: transparent; -fx-background-color: transparent; -fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+                    <GridPane fx:id="tableViewShift" alignment="CENTER" gridLinesVisible="true" styleClass="grid-paneTableShift">
+        </GridPane>
+                </ScrollPane>
+            </children>
+         </AnchorPane>
+      </children>
+   </GridPane>
+</AnchorPane>

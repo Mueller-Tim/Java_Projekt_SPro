@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" stylesheets="../css/style.css" prefHeight="125.0" prefWidth="350.0" spacing="20" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.ConfirmDeleteEmployeeWindowController">
+    <Label styleClass="title-3" text="Delete User"/>
+    <Label text="Are you sure you want to delete the user?" styleClass="text">
+    </Label>
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button onAction="#cancelAction" text="Cancel">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin></Button>
+        <StackPane HBox.hgrow="ALWAYS"/>
+        <Button onAction="#deleteAction" text="Delete" styleClass="button-outlined, danger">
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin></Button>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<AnchorPane fx:id="startAnchorPane" minHeight="650.0" minWidth="1000.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.spro.windowcontrollers.StartWindowController" style="-fx-background-color: #dedede">
+   <VBox alignment="CENTER" prefHeight="383.0" prefWidth="1000.0" spacing="16.0" AnchorPane.bottomAnchor="267.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="302.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../images/logo_transparent_s_pro_big.png" />
+      </ImageView>
+      <Label alignment="TOP_CENTER" prefHeight="36.0" prefWidth="700.0" styleClass="title-1" text="Welcome to s-pro" />
+      <Label alignment="TOP_CENTER" prefHeight="30.0" prefWidth="700.0" styleClass="title-1" text="Generate a shift plan according to your needs"/>
+   </VBox>
+   <VBox alignment="CENTER" prefHeight="158.0" prefWidth="940.0" spacing="30.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+      <padding>
+         <Insets bottom="10.0" />
+      </padding>
+      <HBox alignment="CENTER" prefHeight="91.0" prefWidth="940.0" spacing="80.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <Button contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#buttonCreatePlan" prefHeight="45.0" prefWidth="230.0" styleClass="rounded" text="Create Plan">
+            <graphic>
+               <FontIcon iconLiteral="mdi2n-newspaper-variant-multiple" />
+            </graphic>
+         </Button>
+         <Button contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#buttonExit" prefHeight="45.0" prefWidth="230.0" styleClass="rounded" text="Exit">
+            <graphic>
+               <FontIcon iconLiteral="mdi2e-exit-to-app" />
+            </graphic>
+         </Button>
+      </HBox>
+   </VBox>
+   <!--  <fx:include source="MenuWindow.fxml" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" /> -->
+</AnchorPane>
